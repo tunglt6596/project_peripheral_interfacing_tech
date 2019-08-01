@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=X2 Old Footprint=XT32k New Footprint=XT32-2
+Change Component Designator: OldDesignator=COM NewDesignator=JP1
+Change Net Name : Old Net Name=NetBT1_1 New Net Name=NetBAT3V_1
+Added Room: Name=Schematic

@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=PB3 Pin=R7-1
+Change Component Designator: OldDesignator=3V3 NewDesignator=HD1
+Change Component Designator: OldDesignator=5V NewDesignator=HD2
+Change Component Designator: OldDesignator=GND NewDesignator=HD3
+Added Pin To Net: NetName=NetIC3_4 Pin=R7-1
+Added Net: Name=NetIC3_4
+Added Room: Name=MachNguyenLy

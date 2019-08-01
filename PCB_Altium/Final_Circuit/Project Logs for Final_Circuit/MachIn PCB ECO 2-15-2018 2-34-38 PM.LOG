@@ -1,0 +1,3 @@
+Change Component Footprint: Designator=IC3 Old Footprint=2N2222 New Footprint=Header_FM_3
+Change Component Designator: OldDesignator=RS232 NewDesignator=*
+Added Room: Name=MachNguyenLy

@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=GND Pin=C6-2
+Removed Member From Class: ClassName=Schematic Member=C6
+Change Component Comment : Designator=C8 Old Comment=10uF New Comment=1uF
+Change Component Comment : Designator=C9 Old Comment=10uF New Comment=1uF
+Change Component Comment : Designator=C10 Old Comment=10uF New Comment=1uF
+Change Component Comment : Designator=C11 Old Comment=10uF New Comment=1uF
+Change Component Comment : Designator=C1 Old Comment=10uF New Comment=100uF
+Added Pin To Net: NetName=VCC Pin=ATMEGA16A-30
+Added Pin To Net: NetName=VCC Pin=ATMEGA16A-32
+Added Pin To Net: NetName=GND Pin=C7-1
+Change Net Name : Old Net Name=NetLCD1_3 New Net Name=NetLCD_3
+Change Net Name : Old Net Name=NetLCD1_15 New Net Name=NetLCD_15
+Change Net Name : Old Net Name=VCC New Net Name=AREF
+Change Net Color : Old Net Color=RGB(110, 110, 255) New Net Color=RGB(110, 110, 255)
+Change Net Color : Old Net Color=RGB(255, 110, 110) New Net Color=RGB(255, 110, 110)
+Added Room: Name=Schematic

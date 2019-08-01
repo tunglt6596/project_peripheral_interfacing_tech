@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=PD2 Pin=INT0-1
+Added Pin To Net: NetName=PD2 Pin=INT0-3
+Added Pin To Net: NetName=PD3 Pin=INT1-1
+Added Pin To Net: NetName=PD3 Pin=INT1-3
+Added Room: Name=Schematic

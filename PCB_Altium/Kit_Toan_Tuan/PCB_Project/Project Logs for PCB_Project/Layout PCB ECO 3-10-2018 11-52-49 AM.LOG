@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=DHT11 Old Footprint=DHT11 New Footprint=DHT11_H
+Change Net Color : Old Net Color=RGB(110, 110, 255) New Net Color=RGB(110, 110, 255)
+Change Net Color : Old Net Color=RGB(255, 110, 110) New Net Color=RGB(255, 110, 110)
+Added Room: Name=Schematic

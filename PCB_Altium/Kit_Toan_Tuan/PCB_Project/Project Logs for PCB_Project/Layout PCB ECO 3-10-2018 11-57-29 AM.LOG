@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=GND Pin=RS232-5
+Removed Member From Class: ClassName=Schematic Member=RS232
+Added Component: Designator=*(DSB 9-M)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=*-5
+Added Pin To Net: NetName=Net*_2 Pin=*-2
+Added Pin To Net: NetName=Net*_2 Pin=IC4-14
+Added Net: Name=Net*_2
+Added Pin To Net: NetName=Net*_3 Pin=*-3
+Added Pin To Net: NetName=Net*_3 Pin=IC4-13
+Added Net: Name=Net*_3
+Added Member To Class: ClassName=Schematic Member=Component * RS232

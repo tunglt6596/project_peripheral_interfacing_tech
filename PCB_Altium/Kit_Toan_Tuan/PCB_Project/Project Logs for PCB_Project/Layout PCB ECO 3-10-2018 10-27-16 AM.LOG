@@ -1,0 +1,17 @@
+Change Component Designator: OldDesignator=18B20 NewDesignator=IC3
+Change Component Designator: OldDesignator=AMS117 NewDesignator=U1
+Change Component Designator: OldDesignator=ATMEGA16A NewDesignator=IC2
+Change Component Designator: OldDesignator=INT0 NewDesignator=SW3
+Change Component Designator: OldDesignator=INT1 NewDesignator=SW4
+Change Component Designator: OldDesignator=LCD NewDesignator=LCD1
+Change Component Designator: OldDesignator=LM7805 NewDesignator=IC1
+Change Component Designator: OldDesignator=MAX232 NewDesignator=IC4
+Change Component Designator: OldDesignator=PWR NewDesignator=SW1
+Change Component Designator: OldDesignator=RS232 NewDesignator=COM1
+Change Component Designator: OldDesignator=VR NewDesignator=VR1
+Added Pin To Net: NetName=GND Pin=COM1-5
+Change Net Name : Old Net Name=NetD1_1 New Net Name=Net12VDC_1
+Change Net Name : Old Net Name=NetLED1_2 New Net Name=NetON_2
+Change Net Color : Old Net Color=RGB(110, 110, 255) New Net Color=RGB(110, 110, 255)
+Change Net Color : Old Net Color=RGB(255, 110, 110) New Net Color=RGB(255, 110, 110)
+Added Room: Name=Schematic

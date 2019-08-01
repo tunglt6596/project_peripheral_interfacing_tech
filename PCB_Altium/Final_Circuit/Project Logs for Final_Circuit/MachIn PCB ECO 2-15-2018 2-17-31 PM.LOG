@@ -1,0 +1,41 @@
+Change Component Footprint: Designator=DS18B20 Old Footprint=Header_FM_3 New Footprint=2N2222
+Change Component Designator: OldDesignator=3V3 NewDesignator=HD1
+Change Component Designator: OldDesignator=5V NewDesignator=HD2
+Change Component Designator: OldDesignator=5VDC NewDesignator=JDC
+Change Component Designator: OldDesignator=BAT NewDesignator=BT1
+Change Component Designator: OldDesignator=DS18B20 NewDesignator=IC3
+Change Component Designator: OldDesignator=DS1307 NewDesignator=IC4
+Change Component Designator: OldDesignator=GND NewDesignator=HD3
+Change Component Designator: OldDesignator=JTAG NewDesignator=HD8
+Change Component Designator: OldDesignator=LCD NewDesignator=LCD1
+Change Component Designator: OldDesignator=MAX232 NewDesignator=IC1
+Change Component Designator: OldDesignator=PORTA NewDesignator=HD5
+Change Component Designator: OldDesignator=PORTB NewDesignator=HD4
+Change Component Designator: OldDesignator=PORTC NewDesignator=HD6
+Change Component Designator: OldDesignator=PORTD NewDesignator=HD7
+Change Component Designator: OldDesignator=PWR NewDesignator=SW1
+Change Component Designator: OldDesignator=RS232 NewDesignator=*
+Change Component Designator: OldDesignator=VR NewDesignator=VR1
+Added Component: Designator=R20(AXIAL-0.3)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "D:\Dropbox\Datasheets\Passive Components\Resistors\Carbon Film Resistor.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit Price"; Value = "0.001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1K, 1/4W"; VariantName = "[No Variations]"
+Added Component: Designator=R21(AXIAL-0.3)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "D:\Dropbox\Datasheets\Passive Components\Resistors\Carbon Film Resistor.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit Price"; Value = "0.001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1K, 1/4W"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VCC Pin=R20-2
+Added Pin To Net: NetName=VCC Pin=R21-2
+Added Pin To Net: NetName=NetC15_1 Pin=R20-1
+Added Net: Name=NetC15_1
+Added Net: Name=NetC15_2
+Added Pin To Net: NetName=NetC16_1 Pin=R21-1
+Added Net: Name=NetC16_1
+Added Net: Name=NetC16_2
+Added Member To Class: ClassName=MachNguyenLy Member=Component R20 CF1/4W1KJ25
+Added Member To Class: ClassName=MachNguyenLy Member=Component R21 CF1/4W1KJ25
+Added Room: Name=MachNguyenLy

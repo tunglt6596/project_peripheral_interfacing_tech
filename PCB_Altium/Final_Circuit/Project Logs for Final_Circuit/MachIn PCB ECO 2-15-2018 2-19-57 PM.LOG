@@ -1,0 +1,68 @@
+Change Component Footprint: Designator=R20 Old Footprint=AXIAL-0.3 New Footprint=RES 1/4W CFR25
+Change Component Footprint: Designator=R21 Old Footprint=AXIAL-0.3 New Footprint=RES 1/4W CFR25
+Added Component: Designator=C15(CAP_10UF_16V)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Description 1"; Value = "10 => 220uF/6,3V/10V - 10uF => 100uF/16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 2"; Value = "0,1uF => 33uF/50V - 10uF => 22uF/63V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 3"; Value = "0,47uF => 10uF/100V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF/50V"; VariantName = "[No Variations]"
+Added Component: Designator=C16(CAP_10UF_16V)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Description 1"; Value = "10 => 220uF/6,3V/10V - 10uF => 100uF/16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 2"; Value = "0,1uF => 33uF/50V - 10uF => 22uF/63V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 3"; Value = "0,47uF => 10uF/100V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF/50V"; VariantName = "[No Variations]"
+Added Component: Designator=SW2(BUTTON 4 PIN)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Component: Designator=SW3(BUTTON 4 PIN)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Component: Designator=SW4(BUTTON 4 PIN)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Component: Designator=SW5(BUTTON 4 PIN)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Component: Designator=SW6(BUTTON 4 PIN)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Component: Designator=SW7(BUTTON 4 PIN)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Value"; Value = "Button chip 4 pin"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC15_1 Pin=C15-1
+Added Pin To Net: NetName=NetC15_2 Pin=C15-2
+Added Pin To Net: NetName=NetC16_1 Pin=C16-1
+Added Pin To Net: NetName=NetC16_2 Pin=C16-2
+Added Pin To Net: NetName=NetC15_1 Pin=SW2-1
+Added Pin To Net: NetName=NetC15_2 Pin=SW2-2
+Added Pin To Net: NetName=NetC15_1 Pin=SW2-3
+Added Pin To Net: NetName=NetC15_2 Pin=SW2-4
+Added Pin To Net: NetName=PD4 Pin=SW3-1
+Added Pin To Net: NetName=GND Pin=SW3-2
+Added Pin To Net: NetName=PD4 Pin=SW3-3
+Added Pin To Net: NetName=GND Pin=SW3-4
+Added Pin To Net: NetName=PD5 Pin=SW4-1
+Added Pin To Net: NetName=GND Pin=SW4-2
+Added Pin To Net: NetName=PD5 Pin=SW4-3
+Added Pin To Net: NetName=GND Pin=SW4-4
+Added Pin To Net: NetName=NetC16_1 Pin=SW5-1
+Added Pin To Net: NetName=NetC16_2 Pin=SW5-2
+Added Pin To Net: NetName=NetC16_1 Pin=SW5-3
+Added Pin To Net: NetName=NetC16_2 Pin=SW5-4
+Added Pin To Net: NetName=PD6 Pin=SW6-1
+Added Pin To Net: NetName=GND Pin=SW6-2
+Added Pin To Net: NetName=PD6 Pin=SW6-3
+Added Pin To Net: NetName=GND Pin=SW6-4
+Added Pin To Net: NetName=PD7 Pin=SW7-1
+Added Pin To Net: NetName=GND Pin=SW7-2
+Added Pin To Net: NetName=PD7 Pin=SW7-3
+Added Pin To Net: NetName=GND Pin=SW7-4
+Added Member To Class: ClassName=MachNguyenLy Member=Component C15 10uF
+Added Member To Class: ClassName=MachNguyenLy Member=Component C16 10uF
+Added Member To Class: ClassName=MachNguyenLy Member=Component SW2 SW
+Added Member To Class: ClassName=MachNguyenLy Member=Component SW3 SW
+Added Member To Class: ClassName=MachNguyenLy Member=Component SW4 SW
+Added Member To Class: ClassName=MachNguyenLy Member=Component SW5 SW
+Added Member To Class: ClassName=MachNguyenLy Member=Component SW6 SW
+Added Member To Class: ClassName=MachNguyenLy Member=Component SW7 SW

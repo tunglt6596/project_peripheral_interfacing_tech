@@ -1,0 +1,22 @@
+Change Component Designator: OldDesignator=3V3 NewDesignator=HD1
+Change Component Designator: OldDesignator=5V NewDesignator=HD2
+Change Component Designator: OldDesignator=5VDC NewDesignator=JDC
+Change Component Designator: OldDesignator=BAT NewDesignator=BT1
+Change Component Designator: OldDesignator=GND NewDesignator=HD3
+Change Component Designator: OldDesignator=JTAG NewDesignator=HD8
+Change Component Designator: OldDesignator=LCD NewDesignator=LCD1
+Change Component Designator: OldDesignator=LED_DISPLAY NewDesignator=DS1
+Change Component Designator: OldDesignator=PWR NewDesignator=SW1
+Added Pin To Net: NetName=GND Pin=C15-2
+Added Pin To Net: NetName=GND Pin=C16-2
+Added Pin To Net: NetName=GND Pin=HD7-3
+Added Pin To Net: NetName=GND Pin=HD7-4
+Added Pin To Net: NetName=GND Pin=IC2-16
+Added Pin To Net: NetName=GND Pin=IC2-17
+Added Pin To Net: NetName=GND Pin=R5-2
+Added Pin To Net: NetName=GND Pin=R6-2
+Added Pin To Net: NetName=GND Pin=SW2-2
+Added Pin To Net: NetName=GND Pin=SW2-4
+Added Pin To Net: NetName=GND Pin=SW5-2
+Added Pin To Net: NetName=GND Pin=SW5-4
+Added Room: Name=MachNguyenLy

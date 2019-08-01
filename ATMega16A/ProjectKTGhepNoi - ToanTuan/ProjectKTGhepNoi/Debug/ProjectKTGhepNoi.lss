@@ -1,0 +1,935 @@
+
+ProjectKTGhepNoi.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000038e  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  0000038e  00000422  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000000c  00800060  00800060  00000422  2**0
+                  ALLOC
+  3 .stab         000006cc  00000000  00000000  00000424  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000085  00000000  00000000  00000af0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 00000120  00000000  00000000  00000b78  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000fcf  00000000  00000000  00000c98  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000705  00000000  00000000  00001c67  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000b31  00000000  00000000  0000236c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000264  00000000  00000000  00002ea0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000314  00000000  00000000  00003104  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000004ba  00000000  00000000  00003418  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ee e8       	ldi	r30, 0x8E	; 142
+  68:	f3 e0       	ldi	r31, 0x03	; 3
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	a0 e6       	ldi	r26, 0x60	; 96
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	ac 36       	cpi	r26, 0x6C	; 108
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 9a 01 	call	0x334	; 0x334 <main>
+  8a:	0c 94 c5 01 	jmp	0x38a	; 0x38a <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <Request>:
+#include <util/delay.h>
+#include "DHT11.h"
+
+void Request()
+{
+	DHT11_DDR |= (1<<DHT11_DATA);
+  92:	b9 9a       	sbi	0x17, 1	; 23
+	DHT11_PORT &= ~(1<<DHT11_DATA);
+  94:	c1 98       	cbi	0x18, 1	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  96:	8f e3       	ldi	r24, 0x3F	; 63
+  98:	9c e9       	ldi	r25, 0x9C	; 156
+  9a:	01 97       	sbiw	r24, 0x01	; 1
+  9c:	f1 f7       	brne	.-4      	; 0x9a <Request+0x8>
+  9e:	00 c0       	rjmp	.+0      	; 0xa0 <Request+0xe>
+  a0:	00 00       	nop
+	_delay_ms(20);		//cho it nhat 18ms
+	DHT11_PORT |= (1<<DHT11_DATA);
+  a2:	c1 9a       	sbi	0x18, 1	; 24
+}
+  a4:	08 95       	ret
+
+000000a6 <Response>:
+
+void Response()
+{
+	DHT11_DDR &= ~(1<<DHT11_DATA);
+  a6:	b9 98       	cbi	0x17, 1	; 23
+	while(DHT11_PIN & (1<<DHT11_DATA));
+  a8:	b1 99       	sbic	0x16, 1	; 22
+  aa:	fe cf       	rjmp	.-4      	; 0xa8 <Response+0x2>
+	while((DHT11_PIN & (1<<DHT11_DATA))==0);
+  ac:	b1 9b       	sbis	0x16, 1	; 22
+  ae:	fe cf       	rjmp	.-4      	; 0xac <Response+0x6>
+	while(DHT11_PIN & (1<<DHT11_DATA));
+  b0:	b1 99       	sbic	0x16, 1	; 22
+  b2:	fe cf       	rjmp	.-4      	; 0xb0 <Response+0xa>
+}
+  b4:	08 95       	ret
+
+000000b6 <Receive_data>:
+
+uint8_t Receive_data()
+{
+  b6:	28 e0       	ldi	r18, 0x08	; 8
+  b8:	30 e0       	ldi	r19, 0x00	; 0
+	uint8_t c;
+	for (int q=0; q<8; q++)
+	{
+		while((DHT11_PIN & (1<<DHT11_DATA)) == 0);  /* kiem tra nhan bit 0 or 1 */
+  ba:	b1 9b       	sbis	0x16, 1	; 22
+  bc:	fe cf       	rjmp	.-4      	; 0xba <Receive_data+0x4>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  be:	90 e5       	ldi	r25, 0x50	; 80
+  c0:	9a 95       	dec	r25
+  c2:	f1 f7       	brne	.-4      	; 0xc0 <Receive_data+0xa>
+		_delay_us(30);
+		if(DHT11_PIN & (1<<DHT11_DATA))/* Neu lon hon 30ms */
+  c4:	b1 9b       	sbis	0x16, 1	; 22
+  c6:	03 c0       	rjmp	.+6      	; 0xce <Receive_data+0x18>
+		c = (c<<1)|(0x01);	/* la muc cao*/
+  c8:	88 0f       	add	r24, r24
+  ca:	81 60       	ori	r24, 0x01	; 1
+  cc:	01 c0       	rjmp	.+2      	; 0xd0 <Receive_data+0x1a>
+		else			/* con khong la thap */
+		c = (c<<1);
+  ce:	88 0f       	add	r24, r24
+		while(DHT11_PIN & (1<<DHT11_DATA));
+  d0:	b1 99       	sbic	0x16, 1	; 22
+  d2:	fe cf       	rjmp	.-4      	; 0xd0 <Receive_data+0x1a>
+  d4:	21 50       	subi	r18, 0x01	; 1
+  d6:	30 40       	sbci	r19, 0x00	; 0
+}
+
+uint8_t Receive_data()
+{
+	uint8_t c;
+	for (int q=0; q<8; q++)
+  d8:	81 f7       	brne	.-32     	; 0xba <Receive_data+0x4>
+		else			/* con khong la thap */
+		c = (c<<1);
+		while(DHT11_PIN & (1<<DHT11_DATA));
+	}
+	return c;
+}
+  da:	08 95       	ret
+
+000000dc <therm_reset>:
+uint8_t therm_reset(void)
+{
+	uint8_t i;
+
+	//Pull line low and wait for 480uS
+	THERM_LOW();
+  dc:	c0 98       	cbi	0x18, 0	; 24
+	THERM_OUTPUT_MODE();
+  de:	b8 9a       	sbi	0x17, 0	; 23
+  e0:	8f eb       	ldi	r24, 0xBF	; 191
+  e2:	93 e0       	ldi	r25, 0x03	; 3
+  e4:	01 97       	sbiw	r24, 0x01	; 1
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <therm_reset+0x8>
+  e8:	00 c0       	rjmp	.+0      	; 0xea <therm_reset+0xe>
+  ea:	00 00       	nop
+	_delay_us(480);
+
+	//Release line and wait for 70uS
+	THERM_INPUT_MODE();
+  ec:	b8 98       	cbi	0x17, 0	; 23
+  ee:	9a eb       	ldi	r25, 0xBA	; 186
+  f0:	9a 95       	dec	r25
+  f2:	f1 f7       	brne	.-4      	; 0xf0 <therm_reset+0x14>
+  f4:	00 c0       	rjmp	.+0      	; 0xf6 <therm_reset+0x1a>
+	_delay_us(70);
+
+	//Store line value and wait until the completion of 480uS period
+	i=(THERM_PIN & (1<<THERM_DQ));
+  f6:	86 b3       	in	r24, 0x16	; 22
+  f8:	e3 e3       	ldi	r30, 0x33	; 51
+  fa:	f3 e0       	ldi	r31, 0x03	; 3
+  fc:	31 97       	sbiw	r30, 0x01	; 1
+  fe:	f1 f7       	brne	.-4      	; 0xfc <therm_reset+0x20>
+ 100:	00 c0       	rjmp	.+0      	; 0x102 <therm_reset+0x26>
+ 102:	00 00       	nop
+	_delay_us(410);
+
+	//Return the value read from the presence pulse (0=OK, 1=WRONG)
+	return i;
+}
+ 104:	81 70       	andi	r24, 0x01	; 1
+ 106:	08 95       	ret
+
+00000108 <therm_write_bit>:
+//---------------------------------------------------
+void therm_write_bit(uint8_t bit)
+{
+	if(bit) {
+ 108:	88 23       	and	r24, r24
+ 10a:	59 f0       	breq	.+22     	; 0x122 <therm_write_bit+0x1a>
+		THERM_LOW();
+ 10c:	c0 98       	cbi	0x18, 0	; 24
+		THERM_OUTPUT_MODE();
+ 10e:	b8 9a       	sbi	0x17, 0	; 23
+ 110:	80 e1       	ldi	r24, 0x10	; 16
+ 112:	8a 95       	dec	r24
+ 114:	f1 f7       	brne	.-4      	; 0x112 <therm_write_bit+0xa>
+		_delay_us(6);
+		
+		THERM_INPUT_MODE();
+ 116:	b8 98       	cbi	0x17, 0	; 23
+ 118:	8a ea       	ldi	r24, 0xAA	; 170
+ 11a:	8a 95       	dec	r24
+ 11c:	f1 f7       	brne	.-4      	; 0x11a <therm_write_bit+0x12>
+ 11e:	00 c0       	rjmp	.+0      	; 0x120 <therm_write_bit+0x18>
+ 120:	08 95       	ret
+		_delay_us(64);
+	}
+	else {
+		THERM_LOW();
+ 122:	c0 98       	cbi	0x18, 0	; 24
+		THERM_OUTPUT_MODE();
+ 124:	b8 9a       	sbi	0x17, 0	; 23
+ 126:	80 ea       	ldi	r24, 0xA0	; 160
+ 128:	8a 95       	dec	r24
+ 12a:	f1 f7       	brne	.-4      	; 0x128 <therm_write_bit+0x20>
+		_delay_us(60);
+		
+		THERM_INPUT_MODE();
+ 12c:	b8 98       	cbi	0x17, 0	; 23
+ 12e:	8a e1       	ldi	r24, 0x1A	; 26
+ 130:	8a 95       	dec	r24
+ 132:	f1 f7       	brne	.-4      	; 0x130 <therm_write_bit+0x28>
+ 134:	00 c0       	rjmp	.+0      	; 0x136 <therm_write_bit+0x2e>
+ 136:	08 95       	ret
+
+00000138 <therm_read_bit>:
+uint8_t therm_read_bit(void)
+{
+	uint8_t bit=0;
+
+	//Pull line low for 1uS
+	THERM_LOW();
+ 138:	c0 98       	cbi	0x18, 0	; 24
+	THERM_OUTPUT_MODE();
+ 13a:	b8 9a       	sbi	0x17, 0	; 23
+ 13c:	80 e1       	ldi	r24, 0x10	; 16
+ 13e:	8a 95       	dec	r24
+ 140:	f1 f7       	brne	.-4      	; 0x13e <therm_read_bit+0x6>
+	_delay_us(6);
+
+	//Release line and wait for 14uS
+	THERM_INPUT_MODE();
+ 142:	b8 98       	cbi	0x17, 0	; 23
+ 144:	88 e1       	ldi	r24, 0x18	; 24
+ 146:	8a 95       	dec	r24
+ 148:	f1 f7       	brne	.-4      	; 0x146 <therm_read_bit+0xe>
+	_delay_us(9);
+
+	//Read line value
+	if(THERM_PIN&(1<<THERM_DQ)) bit=1;
+ 14a:	96 b3       	in	r25, 0x16	; 22
+ 14c:	82 e9       	ldi	r24, 0x92	; 146
+ 14e:	8a 95       	dec	r24
+ 150:	f1 f7       	brne	.-4      	; 0x14e <therm_read_bit+0x16>
+ 152:	00 c0       	rjmp	.+0      	; 0x154 <therm_read_bit+0x1c>
+	}
+};
+//--------------------------------------------------
+uint8_t therm_read_bit(void)
+{
+	uint8_t bit=0;
+ 154:	81 e0       	ldi	r24, 0x01	; 1
+ 156:	90 ff       	sbrs	r25, 0
+ 158:	80 e0       	ldi	r24, 0x00	; 0
+	if(THERM_PIN&(1<<THERM_DQ)) bit=1;
+
+	//Wait for 55uS to end and return read value
+	_delay_us(55);
+	return bit;
+}
+ 15a:	08 95       	ret
+
+0000015c <therm_read_byte>:
+//-----------------------------------------------------
+uint8_t therm_read_byte(void)
+{
+ 15c:	cf 93       	push	r28
+ 15e:	df 93       	push	r29
+ 160:	c8 e0       	ldi	r28, 0x08	; 8
+
+	uint8_t i=8, n=0;
+ 162:	d0 e0       	ldi	r29, 0x00	; 0
+	while(i--){
+		//Shift one position right and store read value
+		n>>=1;
+		n|=(therm_read_bit()<<7);
+ 164:	0e 94 9c 00 	call	0x138	; 0x138 <therm_read_bit>
+ 168:	87 95       	ror	r24
+ 16a:	88 27       	eor	r24, r24
+ 16c:	87 95       	ror	r24
+{
+
+	uint8_t i=8, n=0;
+	while(i--){
+		//Shift one position right and store read value
+		n>>=1;
+ 16e:	d6 95       	lsr	r29
+		n|=(therm_read_bit()<<7);
+ 170:	d8 2b       	or	r29, r24
+ 172:	c1 50       	subi	r28, 0x01	; 1
+//-----------------------------------------------------
+uint8_t therm_read_byte(void)
+{
+
+	uint8_t i=8, n=0;
+	while(i--){
+ 174:	b9 f7       	brne	.-18     	; 0x164 <therm_read_byte+0x8>
+		//Shift one position right and store read value
+		n>>=1;
+		n|=(therm_read_bit()<<7);
+	}
+	return n;
+}
+ 176:	8d 2f       	mov	r24, r29
+ 178:	df 91       	pop	r29
+ 17a:	cf 91       	pop	r28
+ 17c:	08 95       	ret
+
+0000017e <therm_write_byte>:
+//-----------------------------------------------------
+void therm_write_byte(uint8_t byte)
+{
+ 17e:	cf 93       	push	r28
+ 180:	df 93       	push	r29
+ 182:	d8 2f       	mov	r29, r24
+ 184:	c8 e0       	ldi	r28, 0x08	; 8
+	uint8_t i=8;
+	while(i--){
+		//Write actual bit and shift one position right to make  the next bit ready
+		therm_write_bit(byte&1);
+ 186:	8d 2f       	mov	r24, r29
+ 188:	81 70       	andi	r24, 0x01	; 1
+ 18a:	0e 94 84 00 	call	0x108	; 0x108 <therm_write_bit>
+		byte>>=1;
+ 18e:	d6 95       	lsr	r29
+ 190:	c1 50       	subi	r28, 0x01	; 1
+}
+//-----------------------------------------------------
+void therm_write_byte(uint8_t byte)
+{
+	uint8_t i=8;
+	while(i--){
+ 192:	c9 f7       	brne	.-14     	; 0x186 <therm_write_byte+0x8>
+		//Write actual bit and shift one position right to make  the next bit ready
+		therm_write_bit(byte&1);
+		byte>>=1;
+	}
+}
+ 194:	df 91       	pop	r29
+ 196:	cf 91       	pop	r28
+ 198:	08 95       	ret
+
+0000019a <therm_read_temperature>:
+//----------------------------------------------------
+uint16_t therm_read_temperature()
+{
+ 19a:	cf 93       	push	r28
+ 19c:	df 93       	push	r29
+	uint16_t digit;
+	// Buffer length must be at least 12bytes long! ["+XXX.XXXX C"]
+	uint8_t temperature[2];
+	//Reset, skip ROM and start temperature conversion
+	therm_reset();
+ 19e:	0e 94 6e 00 	call	0xdc	; 0xdc <therm_reset>
+	therm_write_byte(THERM_CMD_SKIPROM);
+ 1a2:	8c ec       	ldi	r24, 0xCC	; 204
+ 1a4:	0e 94 bf 00 	call	0x17e	; 0x17e <therm_write_byte>
+	therm_write_byte(THERM_CMD_CONVERTTEMP);
+ 1a8:	84 e4       	ldi	r24, 0x44	; 68
+ 1aa:	0e 94 bf 00 	call	0x17e	; 0x17e <therm_write_byte>
+	//Wait until conversion is complete
+	while(!therm_read_bit());
+ 1ae:	0e 94 9c 00 	call	0x138	; 0x138 <therm_read_bit>
+ 1b2:	88 23       	and	r24, r24
+ 1b4:	e1 f3       	breq	.-8      	; 0x1ae <therm_read_temperature+0x14>
+	//Reset, skip ROM and send command to read Scratchpad
+	therm_reset();
+ 1b6:	0e 94 6e 00 	call	0xdc	; 0xdc <therm_reset>
+	therm_write_byte(THERM_CMD_SKIPROM);
+ 1ba:	8c ec       	ldi	r24, 0xCC	; 204
+ 1bc:	0e 94 bf 00 	call	0x17e	; 0x17e <therm_write_byte>
+	therm_write_byte(THERM_CMD_RSCRATCHPAD);
+ 1c0:	8e eb       	ldi	r24, 0xBE	; 190
+ 1c2:	0e 94 bf 00 	call	0x17e	; 0x17e <therm_write_byte>
+	//Read Scratchpad (only 2 first bytes)
+	temperature[0]=therm_read_byte();
+ 1c6:	0e 94 ae 00 	call	0x15c	; 0x15c <therm_read_byte>
+ 1ca:	d8 2f       	mov	r29, r24
+	temperature[1]=therm_read_byte();
+ 1cc:	0e 94 ae 00 	call	0x15c	; 0x15c <therm_read_byte>
+ 1d0:	c8 2f       	mov	r28, r24
+	therm_reset();
+ 1d2:	0e 94 6e 00 	call	0xdc	; 0xdc <therm_reset>
+	//Store temperature integer digits and decimal digits
+	digit=temperature[0]>>4;
+ 1d6:	d2 95       	swap	r29
+ 1d8:	df 70       	andi	r29, 0x0F	; 15
+ 1da:	2d 2f       	mov	r18, r29
+ 1dc:	30 e0       	ldi	r19, 0x00	; 0
+	digit|=(temperature[1]&0x7)<<4;
+ 1de:	8c 2f       	mov	r24, r28
+ 1e0:	90 e0       	ldi	r25, 0x00	; 0
+ 1e2:	87 70       	andi	r24, 0x07	; 7
+ 1e4:	90 70       	andi	r25, 0x00	; 0
+ 1e6:	82 95       	swap	r24
+ 1e8:	92 95       	swap	r25
+ 1ea:	90 7f       	andi	r25, 0xF0	; 240
+ 1ec:	98 27       	eor	r25, r24
+ 1ee:	80 7f       	andi	r24, 0xF0	; 240
+ 1f0:	98 27       	eor	r25, r24
+ 1f2:	82 2b       	or	r24, r18
+ 1f4:	93 2b       	or	r25, r19
+
+	return (digit);
+}
+ 1f6:	df 91       	pop	r29
+ 1f8:	cf 91       	pop	r28
+ 1fa:	08 95       	ret
+
+000001fc <i2c_init>:
+#include <util/delay.h>
+#include "i2c.h"
+
+void i2c_init()
+{
+	TWSR=0x00;
+ 1fc:	11 b8       	out	0x01, r1	; 1
+	TWBR=0x46;
+ 1fe:	86 e4       	ldi	r24, 0x46	; 70
+ 200:	80 b9       	out	0x00, r24	; 0
+	TWCR=0x04;
+ 202:	84 e0       	ldi	r24, 0x04	; 4
+ 204:	86 bf       	out	0x36, r24	; 54
+}
+ 206:	08 95       	ret
+
+00000208 <i2c_start>:
+
+void i2c_start()
+{
+	TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 208:	84 ea       	ldi	r24, 0xA4	; 164
+ 20a:	86 bf       	out	0x36, r24	; 54
+	while((TWCR &(1<<TWINT))==0);
+ 20c:	06 b6       	in	r0, 0x36	; 54
+ 20e:	07 fe       	sbrs	r0, 7
+ 210:	fd cf       	rjmp	.-6      	; 0x20c <i2c_start+0x4>
+}
+ 212:	08 95       	ret
+
+00000214 <i2c_write>:
+
+void i2c_write(uint8_t data)
+{
+	TWDR=data;
+ 214:	83 b9       	out	0x03, r24	; 3
+	TWCR = ((1<< TWINT) | (1<<TWEN));
+ 216:	84 e8       	ldi	r24, 0x84	; 132
+ 218:	86 bf       	out	0x36, r24	; 54
+	while (!(TWCR & (1 <<TWINT)));
+ 21a:	06 b6       	in	r0, 0x36	; 54
+ 21c:	07 fe       	sbrs	r0, 7
+ 21e:	fd cf       	rjmp	.-6      	; 0x21a <i2c_write+0x6>
+}
+ 220:	08 95       	ret
+
+00000222 <i2c_stop>:
+
+void i2c_stop()
+{
+	TWCR = ((1<< TWINT) | (1<<TWEN) | (1<<TWSTO));
+ 222:	84 e9       	ldi	r24, 0x94	; 148
+ 224:	86 bf       	out	0x36, r24	; 54
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 226:	8f e1       	ldi	r24, 0x1F	; 31
+ 228:	9e e4       	ldi	r25, 0x4E	; 78
+ 22a:	01 97       	sbiw	r24, 0x01	; 1
+ 22c:	f1 f7       	brne	.-4      	; 0x22a <i2c_stop+0x8>
+ 22e:	00 c0       	rjmp	.+0      	; 0x230 <i2c_stop+0xe>
+ 230:	00 00       	nop
+	_delay_ms(5);
+}
+ 232:	08 95       	ret
+
+00000234 <i2c_read>:
+
+
+uint8_t  i2c_read(uint8_t ackOption)
+{
+	TWCR = ((1<< TWINT) | (1<<TWEN) | (ackOption<<TWEA));
+ 234:	82 95       	swap	r24
+ 236:	88 0f       	add	r24, r24
+ 238:	88 0f       	add	r24, r24
+ 23a:	80 7c       	andi	r24, 0xC0	; 192
+ 23c:	84 68       	ori	r24, 0x84	; 132
+ 23e:	86 bf       	out	0x36, r24	; 54
+	while ( !(TWCR & (1 <<TWINT)));
+ 240:	06 b6       	in	r0, 0x36	; 54
+ 242:	07 fe       	sbrs	r0, 7
+ 244:	fd cf       	rjmp	.-6      	; 0x240 <i2c_read+0xc>
+	return TWDR;
+ 246:	83 b1       	in	r24, 0x03	; 3
+}
+ 248:	08 95       	ret
+
+0000024a <read2Nib>:
+
+#include "lcd.h"
+
+uint8_t read2Nib(){
+	uint8_t HNib, LNib;
+	DATA_O |=0xF0;
+ 24a:	8b b3       	in	r24, 0x1b	; 27
+ 24c:	80 6f       	ori	r24, 0xF0	; 240
+ 24e:	8b bb       	out	0x1b, r24	; 27
+
+	sbi(CTRL,EN); //enable
+ 250:	da 9a       	sbi	0x1b, 2	; 27
+	DDR_DATA &=0x0F; //set 4 bits cao cua PORT DATA lam input
+ 252:	8a b3       	in	r24, 0x1a	; 26
+ 254:	8f 70       	andi	r24, 0x0F	; 15
+ 256:	8a bb       	out	0x1a, r24	; 26
+	HNib=DATA_I & 0xF0;
+ 258:	89 b3       	in	r24, 0x19	; 25
+	cbi(CTRL,EN); //disable
+ 25a:	da 98       	cbi	0x1b, 2	; 27
+
+	sbi(CTRL,EN); //enable
+ 25c:	da 9a       	sbi	0x1b, 2	; 27
+	LNib = DATA_I & 0xF0;
+ 25e:	99 b3       	in	r25, 0x19	; 25
+	cbi(CTRL,EN); //disable
+ 260:	da 98       	cbi	0x1b, 2	; 27
+	LNib>>=4;
+ 262:	92 95       	swap	r25
+ 264:	9f 70       	andi	r25, 0x0F	; 15
+	uint8_t HNib, LNib;
+	DATA_O |=0xF0;
+
+	sbi(CTRL,EN); //enable
+	DDR_DATA &=0x0F; //set 4 bits cao cua PORT DATA lam input
+	HNib=DATA_I & 0xF0;
+ 266:	80 7f       	andi	r24, 0xF0	; 240
+	sbi(CTRL,EN); //enable
+	LNib = DATA_I & 0xF0;
+	cbi(CTRL,EN); //disable
+	LNib>>=4;
+	return (HNib|LNib);
+}
+ 268:	89 2b       	or	r24, r25
+ 26a:	08 95       	ret
+
+0000026c <write2Nib>:
+
+void write2Nib(uint8_t chr){
+	uint8_t HNib, LNib, temp_data;
+	temp_data=DATA_O & 0x0F; //doc 4 bit thap cua DATA_O de mask,
+ 26c:	9b b3       	in	r25, 0x1b	; 27
+ 26e:	9f 70       	andi	r25, 0x0F	; 15
+
+	HNib=chr & 0xF0;
+ 270:	28 2f       	mov	r18, r24
+ 272:	20 7f       	andi	r18, 0xF0	; 240
+	LNib=(chr<<4) & 0xF0;
+
+	DATA_O =(HNib |temp_data);
+ 274:	29 2b       	or	r18, r25
+ 276:	2b bb       	out	0x1b, r18	; 27
+	sbi(CTRL,EN); //enable
+ 278:	da 9a       	sbi	0x1b, 2	; 27
+	cbi(CTRL,EN); //disable
+ 27a:	da 98       	cbi	0x1b, 2	; 27
+void write2Nib(uint8_t chr){
+	uint8_t HNib, LNib, temp_data;
+	temp_data=DATA_O & 0x0F; //doc 4 bit thap cua DATA_O de mask,
+
+	HNib=chr & 0xF0;
+	LNib=(chr<<4) & 0xF0;
+ 27c:	82 95       	swap	r24
+ 27e:	80 7f       	andi	r24, 0xF0	; 240
+
+	DATA_O =(HNib |temp_data);
+	sbi(CTRL,EN); //enable
+	cbi(CTRL,EN); //disable
+
+	DATA_O =(LNib|temp_data);
+ 280:	98 2b       	or	r25, r24
+ 282:	9b bb       	out	0x1b, r25	; 27
+	sbi(CTRL,EN); //enable
+ 284:	da 9a       	sbi	0x1b, 2	; 27
+	cbi(CTRL,EN); //disable
+ 286:	da 98       	cbi	0x1b, 2	; 27
+}
+ 288:	08 95       	ret
+
+0000028a <wait_LCD>:
+ 28a:	8f e3       	ldi	r24, 0x3F	; 63
+ 28c:	9f e1       	ldi	r25, 0x1F	; 31
+ 28e:	01 97       	sbiw	r24, 0x01	; 1
+ 290:	f1 f7       	brne	.-4      	; 0x28e <wait_LCD+0x4>
+ 292:	00 c0       	rjmp	.+0      	; 0x294 <wait_LCD+0xa>
+ 294:	00 00       	nop
+
+void wait_LCD()
+{
+	_delay_ms(2);
+}
+ 296:	08 95       	ret
+
+00000298 <init_LCD>:
+
+void init_LCD()
+{
+	DDR_CTRL=0xFF;
+ 298:	8f ef       	ldi	r24, 0xFF	; 255
+ 29a:	8a bb       	out	0x1a, r24	; 26
+	DDR_DATA=0xFF;
+ 29c:	8a bb       	out	0x1a, r24	; 26
+	//Function set------------------------------------------------------------------------------
+	cbi(CTRL,RS);   // the following data is COMMAND
+ 29e:	d8 98       	cbi	0x1b, 0	; 27
+	cbi(CTRL, EN);
+ 2a0:	da 98       	cbi	0x1b, 2	; 27
+	sbi(CTRL,EN); //enable
+ 2a2:	da 9a       	sbi	0x1b, 2	; 27
+	sbi(DATA_O, 5);
+ 2a4:	dd 9a       	sbi	0x1b, 5	; 27
+	cbi(CTRL,EN); //disable
+ 2a6:	da 98       	cbi	0x1b, 2	; 27
+	wait_LCD();
+ 2a8:	0e 94 45 01 	call	0x28a	; 0x28a <wait_LCD>
+	write2Nib(0x28);//4 bit mode, 2 line, 5x8 font
+ 2ac:	88 e2       	ldi	r24, 0x28	; 40
+ 2ae:	0e 94 36 01 	call	0x26c	; 0x26c <write2Nib>
+	wait_LCD();
+ 2b2:	0e 94 45 01 	call	0x28a	; 0x28a <wait_LCD>
+
+	write2Nib(0x02);
+ 2b6:	82 e0       	ldi	r24, 0x02	; 2
+ 2b8:	0e 94 36 01 	call	0x26c	; 0x26c <write2Nib>
+	wait_LCD();
+ 2bc:	0e 94 45 01 	call	0x28a	; 0x28a <wait_LCD>
+	//Display control-------------------------------------------------------------------------
+	write2Nib(0x0C);
+ 2c0:	8c e0       	ldi	r24, 0x0C	; 12
+ 2c2:	0e 94 36 01 	call	0x26c	; 0x26c <write2Nib>
+	wait_LCD();
+ 2c6:	0e 94 45 01 	call	0x28a	; 0x28a <wait_LCD>
+	//Entry mode set------------------------------------------------------------------------
+	write2Nib(0x06);
+ 2ca:	86 e0       	ldi	r24, 0x06	; 6
+ 2cc:	0e 94 36 01 	call	0x26c	; 0x26c <write2Nib>
+	wait_LCD();
+ 2d0:	0e 94 45 01 	call	0x28a	; 0x28a <wait_LCD>
+}
+ 2d4:	08 95       	ret
+
+000002d6 <home_LCD>:
+
+void home_LCD()
+{
+	cbi(CTRL,RS); // the following data is COMMAND
+ 2d6:	d8 98       	cbi	0x1b, 0	; 27
+	write2Nib(0x02);
+ 2d8:	82 e0       	ldi	r24, 0x02	; 2
+ 2da:	0e 94 36 01 	call	0x26c	; 0x26c <write2Nib>
+	wait_LCD();
+ 2de:	0e 94 45 01 	call	0x28a	; 0x28a <wait_LCD>
+}
+ 2e2:	08 95       	ret
+
+000002e4 <move_LCD>:
+
+void move_LCD(uint8_t y,uint8_t x)
+{
+	uint8_t Ad;
+	Ad=64*(y-1)+(x-1)+0x80; 
+	cbi(CTRL,RS); // the following data is COMMAND
+ 2e4:	d8 98       	cbi	0x1b, 0	; 27
+}
+
+void move_LCD(uint8_t y,uint8_t x)
+{
+	uint8_t Ad;
+	Ad=64*(y-1)+(x-1)+0x80; 
+ 2e6:	82 95       	swap	r24
+ 2e8:	88 0f       	add	r24, r24
+ 2ea:	88 0f       	add	r24, r24
+ 2ec:	80 7c       	andi	r24, 0xC0	; 192
+ 2ee:	86 0f       	add	r24, r22
+	cbi(CTRL,RS); // the following data is COMMAND
+	write2Nib(Ad);
+ 2f0:	81 5c       	subi	r24, 0xC1	; 193
+ 2f2:	0e 94 36 01 	call	0x26c	; 0x26c <write2Nib>
+	wait_LCD();
+ 2f6:	0e 94 45 01 	call	0x28a	; 0x28a <wait_LCD>
+}
+ 2fa:	08 95       	ret
+
+000002fc <clear_LCD>:
+
+void clear_LCD()
+{
+	cbi(CTRL,RS); //RS=0 mean the following data is COMMAND (not normal DATA)
+ 2fc:	d8 98       	cbi	0x1b, 0	; 27
+	write2Nib(0x01);
+ 2fe:	81 e0       	ldi	r24, 0x01	; 1
+ 300:	0e 94 36 01 	call	0x26c	; 0x26c <write2Nib>
+	wait_LCD();
+ 304:	0e 94 45 01 	call	0x28a	; 0x28a <wait_LCD>
+}
+ 308:	08 95       	ret
+
+0000030a <putchar_LCD>:
+
+void putchar_LCD(uint8_t chr)
+{ //hien thi 1 ki tu
+	sbi(CTRL,RS); //this is a normal DATA
+ 30a:	d8 9a       	sbi	0x1b, 0	; 27
+	write2Nib(chr);
+ 30c:	0e 94 36 01 	call	0x26c	; 0x26c <write2Nib>
+	wait_LCD();
+ 310:	0e 94 45 01 	call	0x28a	; 0x28a <wait_LCD>
+}
+ 314:	08 95       	ret
+
+00000316 <puts_LCD>:
+
+void puts_LCD(char* str)
+{
+ 316:	cf 93       	push	r28
+ 318:	df 93       	push	r29
+ 31a:	ec 01       	movw	r28, r24
+   char *c = str;
+   for(; *c; c++)
+ 31c:	88 81       	ld	r24, Y
+ 31e:	88 23       	and	r24, r24
+ 320:	31 f0       	breq	.+12     	; 0x32e <puts_LCD+0x18>
+	sbi(CTRL,RS); //this is a normal DATA
+	write2Nib(chr);
+	wait_LCD();
+}
+
+void puts_LCD(char* str)
+ 322:	21 96       	adiw	r28, 0x01	; 1
+{
+   char *c = str;
+   for(; *c; c++)
+		putchar_LCD(*c);
+ 324:	0e 94 85 01 	call	0x30a	; 0x30a <putchar_LCD>
+}
+
+void puts_LCD(char* str)
+{
+   char *c = str;
+   for(; *c; c++)
+ 328:	89 91       	ld	r24, Y+
+ 32a:	88 23       	and	r24, r24
+ 32c:	d9 f7       	brne	.-10     	; 0x324 <puts_LCD+0xe>
+		putchar_LCD(*c);
+ 32e:	df 91       	pop	r29
+ 330:	cf 91       	pop	r28
+ 332:	08 95       	ret
+
+00000334 <main>:
+
+uint8_t c = 0, I_RH,D_RH,I_Temp;
+
+int main()
+{
+	DDRB = 0xFF;
+ 334:	8f ef       	ldi	r24, 0xFF	; 255
+ 336:	87 bb       	out	0x17, r24	; 23
+	PORTB = 0x00;
+ 338:	18 ba       	out	0x18, r1	; 24
+	//TIMSK = (1<<TOIE1);
+	//sei();
+	//puts_LCD("Hello World!!!");
+	while(1)
+	{
+		PORTB = ~PORTB;
+ 33a:	88 b3       	in	r24, 0x18	; 24
+ 33c:	80 95       	com	r24
+ 33e:	88 bb       	out	0x18, r24	; 24
+ 340:	8f ef       	ldi	r24, 0xFF	; 255
+ 342:	94 e3       	ldi	r25, 0x34	; 52
+ 344:	ac e0       	ldi	r26, 0x0C	; 12
+ 346:	81 50       	subi	r24, 0x01	; 1
+ 348:	90 40       	sbci	r25, 0x00	; 0
+ 34a:	a0 40       	sbci	r26, 0x00	; 0
+ 34c:	e1 f7       	brne	.-8      	; 0x346 <main+0x12>
+ 34e:	00 c0       	rjmp	.+0      	; 0x350 <main+0x1c>
+ 350:	00 00       	nop
+ 352:	f3 cf       	rjmp	.-26     	; 0x33a <main+0x6>
+
+00000354 <UART_init>:
+
+#include "uart.h"
+
+void UART_init()
+{
+	UCSRA = 0x00;
+ 354:	1b b8       	out	0x0b, r1	; 11
+	UCSRB = (1<<TXEN);
+ 356:	88 e0       	ldi	r24, 0x08	; 8
+ 358:	8a b9       	out	0x0a, r24	; 10
+	UCSRC = (1<<URSEL)|(1<<UCSZ0)|(1<<UCSZ1);
+ 35a:	96 e8       	ldi	r25, 0x86	; 134
+ 35c:	90 bd       	out	0x20, r25	; 32
+	UBRRH = 0x00;
+ 35e:	10 bc       	out	0x20, r1	; 32
+	UBRRL = 8;
+ 360:	89 b9       	out	0x09, r24	; 9
+}
+ 362:	08 95       	ret
+
+00000364 <UART_Write>:
+
+void UART_Write(char data)
+{
+	UDR = data;//thanh ghi du lieu,chua 8 bit truyen va nhan
+ 364:	8c b9       	out	0x0c, r24	; 12
+	while (!(UCSRA & (1<<UDRE)));// Neu bit nay bang 1 >> UDR trong
+ 366:	5d 9b       	sbis	0x0b, 5	; 11
+ 368:	fe cf       	rjmp	.-4      	; 0x366 <UART_Write+0x2>
+}
+ 36a:	08 95       	ret
+
+0000036c <UART_Write_Text>:
+
+void UART_Write_Text(char* str)
+{
+ 36c:	cf 93       	push	r28
+ 36e:	df 93       	push	r29
+ 370:	ec 01       	movw	r28, r24
+	int i=0;
+	while (str[i]!=0)
+ 372:	88 81       	ld	r24, Y
+ 374:	88 23       	and	r24, r24
+ 376:	31 f0       	breq	.+12     	; 0x384 <UART_Write_Text+0x18>
+{
+	UDR = data;//thanh ghi du lieu,chua 8 bit truyen va nhan
+	while (!(UCSRA & (1<<UDRE)));// Neu bit nay bang 1 >> UDR trong
+}
+
+void UART_Write_Text(char* str)
+ 378:	21 96       	adiw	r28, 0x01	; 1
+{
+	int i=0;
+	while (str[i]!=0)
+	{
+		UART_Write(str[i]);
+ 37a:	0e 94 b2 01 	call	0x364	; 0x364 <UART_Write>
+}
+
+void UART_Write_Text(char* str)
+{
+	int i=0;
+	while (str[i]!=0)
+ 37e:	89 91       	ld	r24, Y+
+ 380:	88 23       	and	r24, r24
+ 382:	d9 f7       	brne	.-10     	; 0x37a <UART_Write_Text+0xe>
+	{
+		UART_Write(str[i]);
+		i++;
+	}
+ 384:	df 91       	pop	r29
+ 386:	cf 91       	pop	r28
+ 388:	08 95       	ret
+
+0000038a <_exit>:
+ 38a:	f8 94       	cli
+
+0000038c <__stop_program>:
+ 38c:	ff cf       	rjmp	.-2      	; 0x38c <__stop_program>

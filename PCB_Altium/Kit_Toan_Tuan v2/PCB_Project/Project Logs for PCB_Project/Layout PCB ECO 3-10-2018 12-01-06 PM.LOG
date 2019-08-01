@@ -1,0 +1,8 @@
+Change Component Footprint: Designator=DHT11 Old Footprint=DHT11 New Footprint=DHT11_H
+Change Component Comment : Designator=DHT11 Old Comment=DHT11 New Comment=DHT11/22
+Change component parameters: Designator = "DHT11"; Footprint = "DHT11_H"; UniqueID = "\PEKJVSVN"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = ""; Value = ""; VariantName = "[No Variations]"
+Change Net Name : Old Net Name=Net*_2 New Net Name=NetIC4_14
+Change Net Name : Old Net Name=Net*_3 New Net Name=NetIC4_13
+Added Room: Name=Schematic

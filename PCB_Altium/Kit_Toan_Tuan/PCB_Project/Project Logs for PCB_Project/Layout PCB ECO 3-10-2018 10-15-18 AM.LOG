@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=C7 Old Footprint=SM-CAP-0805 New Footprint=CN2
+Change Component Designator: OldDesignator=ON NewDesignator=LED1
+Change Component Designator: OldDesignator=RS232 NewDesignator=COM1
+Change Net Color : Old Net Color=RGB(110, 110, 255) New Net Color=RGB(110, 110, 255)
+Change Net Color : Old Net Color=RGB(255, 110, 110) New Net Color=RGB(255, 110, 110)
+Added Member To Class: ClassName=Schematic Member=Component IC3 DS18B20
+Added Room: Name=Schematic

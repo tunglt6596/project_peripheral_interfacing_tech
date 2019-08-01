@@ -1,0 +1,4 @@
+Change Component Designator: OldDesignator=C7 NewDesignator=C6
+Change Net Color : Old Net Color=RGB(110, 110, 255) New Net Color=RGB(110, 110, 255)
+Change Net Color : Old Net Color=RGB(255, 110, 110) New Net Color=RGB(255, 110, 110)
+Added Room: Name=Schematic
